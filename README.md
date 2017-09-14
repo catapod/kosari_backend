@@ -1,7 +1,10 @@
 ## Getting started
-### Development
+### Install dependecies
 ```
 npm i
+```
+### Development
+```
 npm run dev
 ```
 ### Building
