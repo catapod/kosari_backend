@@ -21,7 +21,8 @@
     "cross-env": "^5.0.5",
     "koa": "^2.3.0",
     "koa-body": "^2.3.0",
-    "koa-router": "^7.2.1"
+    "koa-router": "^7.2.1",
+    "lowdb": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
