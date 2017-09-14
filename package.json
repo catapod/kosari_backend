@@ -1,0 +1,38 @@
+{
+  "name": "kosari",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "dev": "backpack && ./node_modules/.bin/esw --ignore-path .gitignore -w src/",
+    "build": "backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catapod/kosari_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catapod/kosari_backend/issues"
+  },
+  "homepage": "https://github.com/catapod/kosari_backend#readme",
+  "dependencies": {
+    "cross-env": "^5.0.5",
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-router": "^7.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "backpack-core": "^0.4.2",
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standart": "^0.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-watch": "^3.1.2"
+  }
+}
