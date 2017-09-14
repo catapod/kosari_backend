@@ -8,8 +8,7 @@ import path from 'path'
 const adapter = new FileSync(path.resolve(__dirname, 'data/db.json'))
 const db = low(adapter)
 
-db.defaults({ scores: []})
-  .write()
+db.defaults({ scores: []}).write()
 
 const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'

@@ -36,9 +36,7 @@ router
   })
   .post('/score/update', ctx => {
     const { id, distance } = ctx.request.body
-
-    const user = ctx.db.get('scores')
-      .find({ id })
+    const user = ctx.db.get('scores').find({ id })
 
     if (user) {
       user
