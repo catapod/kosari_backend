@@ -1,5 +1,5 @@
 ## Getting started
-### Install dependecies
+### Install dependencies
 ```
 npm i
 ```
