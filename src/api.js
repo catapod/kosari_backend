@@ -14,7 +14,7 @@ router
 
     ctx.body = scores
   })
-  .post('/score/new', ctx => {
+  .post('/score', ctx => {
     const { username, distance } = ctx.request.body
 
     if (!username || !distance) {
@@ -22,27 +22,7 @@ router
       return
     }
 
-    const user = ctx.db.get('scores')
-      .find({ username })
-      .value()
-
-    if (!user) { 
-      ctx.db.get('scores')
-        .push({ id: shortid.generate(), distance, username })
-        .write()
-    } else {
-      ctx.throw(401, 'User already exists!')
-    }
-  })
-  .post('/score/update', ctx => {
-    const { id, distance } = ctx.request.body
-    const user = ctx.db.get('scores').find({ id })
-
-    if (user) {
-      user
-        .assign({ distance })
-        .write()
-    } else {
-      ctx.throw(401, 'User does not exist!')
-    }
+    ctx.db.get('scores')
+      .push({ id: shortid.generate(), distance, username })
+      .write()
   })
