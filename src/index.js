@@ -3,9 +3,16 @@ import koaBody from 'koa-body'
 import { router } from './api'
 import low from 'lowdb'
 import FileSync from 'lowdb/adapters/FileSync'
-import path from 'path'
+import { resolve } from 'path'
+import fs from 'fs'
 
-const adapter = new FileSync(path.resolve(__dirname, 'data/db.json'))
+const dbPath = resolve(__dirname, 'data')
+
+if (!fs.existsSync(dbPath)) {
+  fs.mkdirSync(dbPath)
+}
+
+const adapter = new FileSync(`${dbPath}/db.json`)
 const db = low(adapter)
 
 db.defaults({ scores: []}).write()
